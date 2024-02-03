@@ -10,7 +10,7 @@ function checkLoginPassword(login) {
         '💋💋 💋💋 💋💋 💋💋 😘😘 😘😘 😘😘 😘😘 😘😘 😘😘 😘😘 💋💋 💋💋 💋💋 💋💋 '
       );
     } else {
-      alert('😭 😭 😭 😭 😭 💔 💔 💔 MA VAAAIII...');
+      alert('😭 😭 😭 😭 😭 😭 💔 💔 💔 MA VAAAIII...');
     }
   } else {
     alert('NON TI CONOSCO! VAI A CAGARE! 😝 😝 😝');
