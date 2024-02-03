@@ -5,7 +5,7 @@ function checkLoginPassword(login) {
     const password = prompt(
       'MENOMALE SAI CHI SONO!             ALLORA PASSWORD  😁🤪'
     );
-    if (password === 'ti amo lipuchka') {
+    if (password === 'ti amo') {
       alert(
         '💋💋 💋💋 💋💋 💋💋 😘😘 😘😘 😘😘 😘😘 😘😘 😘😘 😘😘 💋💋 💋💋 💋💋 💋💋 '
       );
