@@ -1,17 +1,15 @@
 const login = prompt(`CIAO! CHI SEI??? 🧐🧐🧐🧐🧐`);
 
 function checkLoginPassword(login) {
-  if (login === 'НУСЯ') {
-    const password = prompt('выкладывай пароль');
-    if (password === 'Я НУСЯ') {
-      alert('💋💋💋💋💋💋💋💋');
+  if (login === 'zaraza') {
+    const password = prompt('MENOMALE CHE SAI CHI SONO! ALLORA PASSWORD😁🤪');
+    if (password === 'ti amo lipuchka') {
+      alert('💋💋💋💋💋💋💋💋😘😘😘😘😘😘😘😘');
     } else {
-      alert('в следующий раз повезет ))');
+      alert('ARIVEDERCI CIAO!!!💔💔💔');
     }
-  } else if (!login) {
-    alert('ИЗВиНИ, но мы не знакомы))');
   } else {
-    alert('И все же мы не знакомы');
+    alert('NON TI CONOSCO! VAI A CAGARE!😝😝😝');
   }
 }
 console.log(checkLoginPassword(login));
