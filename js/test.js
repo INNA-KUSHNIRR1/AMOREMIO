@@ -1547,24 +1547,26 @@ const users = [
 // console.log(getUserWithEmail(users, 'elmahead@omatom.com')); // {об'єкт користувача Elma Head}
 
 // ************444444
-// KAK?
+//
 
 // Масив імен (поле name) людей, відсортованих залежно кількості їх друзів (поле friends)
-// const getNamesSortedByFriendsCount = users => {
-//   users
-//     .flatMap(user => user.friends)
-//     .toSorted(
-//       (firstUser, secondUser) =>
-//         firstUser.friends.length - secondUser.Friends.length
-//     )
-//     .map(user => user.name);
-// };
-// console.log(getNamesSortedByFriendsCount(users));
+// const getNamesSortedByFriendsCount = users
+//   .toSorted(
+//     (firstUser, secondUser) =>
+//       firstUser.friends.length - secondUser.friends.length
+//   )
+//   .map(user => user.name);
+
+// console.log(getNamesSortedByFriendsCount);
 //[ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
 // Отримати масив всіх умінь всіх користувачів (поле skills), при цьому не повинно бути
 // Уміння, що повторюються, і вони повинні бути відсортовані в алфавітному порядку.
-const getSortedUniqueSkills = users => users.flatMap(user => user.skills);
-console.log(getSortedUniqueSkills(users));
+// const getSortedUniqueSkills = users
+//   .flatMap(user => user.skills)
+//   .filter((skill, index, skills) => skills.indexOf(skill) === index)
+//   .toSorted((firstSkill, secondSkill) => firstSkill - secondSkill);
+
+// console.log(getSortedUniqueSkills);
 // ['adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit' , 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam'
 
 // class Car {
@@ -1695,3 +1697,75 @@ console.log(getSortedUniqueSkills(users));
 // };
 
 // console.log(user.friends.length);
+
+// const first = { propA: 5, propB: 10, propC: 50 };
+// const second = { propC: 15, propD: 20 };
+
+// const third = { ...first, ...second };
+// console.log(third); // { propA: 5, propB: 10, propC: 15, propD: 20 }
+
+// const fourth = { ...second, ...first };
+// console.log(fourth); // { propA: 5, propB: 10, propC: 50, propD: 20 }
+//
+//
+
+//16 марта
+/*
+Завдання 2
+Після натискання кнопки "SWAP ME" здійснюється обмін вмістом між двома інпутами.
+Ви можете натиснути на неї кілька разів або вручну змінити вміст інпутів.
+*/
+// const refs = {
+//   leftSwapInput: document.querySelector('#leftSwapInput'),
+//   rightSwapInput: document.querySelector('#rightSwapInput'),
+//   swapButton: document.querySelector('#swapButton'),
+// };
+// console.log(refs.leftSwapInput);
+// console.log(refs.rightSwapInput);
+// console.log(refs.swapButton);
+
+// refs.swapButton.addEventListener('click', swapButtonClickHandler);
+// function swapButtonClickHandler(event) {
+//   const valueLeft = refs.leftSwapInput.value;
+//   const valueRight = refs.rightSwapInput.value;
+//   refs.rightSwapInput.value = valueLeft;
+//   refs.leftSwapInput.value = valueRight;
+// }
+
+// При натисканні на кожну з кнопок підсумовуються значення з data-атрибутів.
+// За натисканням на кнопку "Вивести результат" виводиться сума значення, а також статистика з
+// інформацією про те, яка кнопка була натиснута скільки разів.
+// */
+const refs = {
+  statlist: document.querySelector('.statList'),
+  resultButton: document.querySelector('#resultButton'),
+  resultSection: document.querySelector('#resultSection'),
+};
+
+refs.statlist.addEventListener('click', onStatListClick);
+refs.resultButton.addEventListener('click', onResultButtonClick);
+let sum = 0;
+const statist = {};
+const statistica = statist.valueOf();
+console.log(statistica);
+
+function onStatListClick(event) {
+  if (event.target.nodeName !== 'BUTTON') {
+    return;
+  }
+  const valueButton = Number(event.target.dataset.number);
+  sum += valueButton;
+  statist[event.target.textContent] =
+    (statist[event.target.textContent] ?? 0) + 1;
+  console.log(statist);
+  console.log(sum);
+
+  // console.log(refs.resultSection.innerHTML);
+}
+function onResultButtonClick(event) {
+  refs.resultSection.innerHTML = createMarkup(sum, statistica);
+  console.log(createMarkup(sum, statistica));
+}
+function createMarkup(a, b) {
+  return `<div class="sum">Сума: ${a}</div><div class="stat">Статистика нажатия кнопок:${b}</div>`;
+}
