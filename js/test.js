@@ -1746,6 +1746,7 @@ refs.statlist.addEventListener('click', onStatListClick);
 refs.resultButton.addEventListener('click', onResultButtonClick);
 let sum = 0;
 const statist = {};
+//надо отобразить на странице информацию типа("Button #5": 1,"Button #2": 1)
 const statistica = statist.valueOf();
 console.log(statistica);
 
@@ -1759,8 +1760,6 @@ function onStatListClick(event) {
     (statist[event.target.textContent] ?? 0) + 1;
   console.log(statist);
   console.log(sum);
-
-  // console.log(refs.resultSection.innerHTML);
 }
 function onResultButtonClick(event) {
   refs.resultSection.innerHTML = createMarkup(sum, statistica);
