@@ -1732,39 +1732,67 @@ const users = [
 //   refs.leftSwapInput.value = valueRight;
 // }
 
-// При натисканні на кожну з кнопок підсумовуються значення з data-атрибутів.
-// За натисканням на кнопку "Вивести результат" виводиться сума значення, а також статистика з
-// інформацією про те, яка кнопка була натиснута скільки разів.
-// */
-const refs = {
-  statlist: document.querySelector('.statList'),
-  resultButton: document.querySelector('#resultButton'),
-  resultSection: document.querySelector('#resultSection'),
-};
+// // При натисканні на кожну з кнопок підсумовуються значення з data-атрибутів.
+// // За натисканням на кнопку "Вивести результат" виводиться сума значення, а також статистика з
+// // інформацією про те, яка кнопка була натиснута скільки разів.
+// // // */
+// const refs = {
+//   statlist: document.querySelector('.statList'),
+//   resultButton: document.querySelector('#resultButton'),
+//   resultSection: document.querySelector('#resultSection'),
+// };
 
-refs.statlist.addEventListener('click', onStatListClick);
-refs.resultButton.addEventListener('click', onResultButtonClick);
-let sum = 0;
-const statist = {};
-//надо отобразить на странице информацию типа("Button #5": 1,"Button #2": 1)
-const statistica = statist.valueOf();
-console.log(statistica);
+// refs.statlist.addEventListener('click', onStatListClick);
+// refs.resultButton.addEventListener('click', onResultButtonClick);
 
-function onStatListClick(event) {
-  if (event.target.nodeName !== 'BUTTON') {
-    return;
-  }
-  const valueButton = Number(event.target.dataset.number);
-  sum += valueButton;
-  statist[event.target.textContent] =
-    (statist[event.target.textContent] ?? 0) + 1;
-  console.log(statist);
-  console.log(sum);
-}
-function onResultButtonClick(event) {
-  refs.resultSection.innerHTML = createMarkup(sum, statistica);
-  console.log(createMarkup(sum, statistica));
-}
-function createMarkup(a, b) {
-  return `<div class="sum">Сума: ${a}</div><div class="stat">Статистика нажатия кнопок:${b}</div>`;
-}
+// let sum = 0;
+// const statist = {};
+
+// function onStatListClick(event) {
+//   if (event.target.nodeName !== 'BUTTON') {
+//     return;
+//   }
+//   const valueButton = Number(event.target.dataset.number);
+//   sum += valueButton;
+//   statist[event.target.textContent] =
+//     (statist[event.target.textContent] ?? 0) + 1;
+//   // console.log(statist);
+//   // console.log(sum);
+// }
+// function onResultButtonClick(event) {
+//   let stats = '';
+//   for (const key in statist) {
+//     stats += `${key}: ${statist[key]} times clicked<br>`;
+//   }
+
+//   refs.resultSection.innerHTML = `Total Sum: ${sum}<br><br>Statistics:<br>${stats}`;
+// }
+
+// const refs = {
+//   statlist: document.querySelector('.statList'),
+//   resultButton: document.querySelector('#resultButton'),
+//   resultSection: document.querySelector('#resultSection'),
+// };
+// refs.statlist.addEventListener('click', onStatListClick);
+// refs.resultButton.addEventListener('click', onResultButtonClick);
+// const statist = {};
+// console.log(statist);
+
+// function onStatListClick(event) {
+//   if (event.target.nodeName !== 'BUTTON') {
+//     return;
+//   }
+//   const number = parseInt(event.target.getAttribute('data-number'));
+//   console.log(number);
+//   statist[number] = (statist[number] || 0) + 1;
+//   console.log(statist[number]);
+// }
+// function onResultButtonClick(event) {
+//   let totalSum = 0;
+//   let stats = '';
+//   Object.keys(statist).forEach(key => {
+//     totalSum += parseInt(key) * statist[key];
+//     stats += `Button #${key}: ${statist[key]} times clicked<br>`;
+//   });
+//   refs.resultSection.innerHTML = `Total Sum: ${totalSum}<br><br>Statistics:<br>${stats}`;
+// }
