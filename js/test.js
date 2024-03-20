@@ -1796,3 +1796,79 @@ const users = [
 //   });
 //   refs.resultSection.innerHTML = `Total Sum: ${totalSum}<br><br>Statistics:<br>${stats}`;
 // }
+
+// const dog = {
+//   name: 'Mango - 55',
+//   age: 33,
+//   isGoodBoy: false,
+// };
+
+// const json = JSON.stringify(dog.isGoodBoy);
+// console.log(json); // '{"name":"Mango","age":3,"isGoodBoy":true}'
+// console.log(dog.isGoodBoy);
+
+// const json = JSON.stringify(() => console.log('Well, this is awkward'));
+// console.log(json); // undefined
+// console.log(JSON.parse('5')); // 5
+// console.log(JSON.parse('false')); // false
+// console.log(JSON.parse('null')); // null
+
+// const jsons = 'Well, this is awkward';
+// console.log(jsons);
+// const json = JSON.stringify('Well, this is awkward');
+// console.log(json);
+// const data = JSON.parse('"Well, this is awkward"');
+// console.log(data);
+
+// const data1 = JSON.parse('{"username": "Mango"}'); // Error
+// console.log("❌ You won't see this log");
+
+// try {
+//   const data = JSON.parse('"Well, this is awkward"');
+// } catch (error) {
+//   console.log(error.name); // "SyntaxError"
+//   console.log(error.message); // Unexpected token W in JSON at position 0
+// }
+
+// console.log('✅ This is fine, we handled parsing error in try...catch');
+
+// console.log('This message will not appear in the console');
+
+// const value = 5;
+
+// localStorage.setItem('ui-theme');
+// localStorage.setItem('ui-theme', 'lights');
+// console.log(localStorage); // Storage {ui-theme: "light", length: 1}
+// const settings = {
+//   theme: 'dark',
+//   isAuthenticated: true,
+//   options: [1, 2, 3],
+// };
+
+// localStorage.setItem('settings', JSON.stringify(settings));
+
+// const savedTheme = localStorage.getItem('ui-theme');
+// console.log(savedTheme); // "light"
+// const savedItem = localStorage.getItem('key-that-does-not-exist');
+// console.log(savedItem); // null
+
+// const settings = {
+//   theme: 'dark',
+//   isAuthenticated: true,
+//   options: [1, 2, 3],
+// };
+// localStorage.setItem('settings', JSON.stringify(settings));
+
+// const savedSettings = localStorage.getItem('settings');
+// console.log(savedSettings); // A string
+
+// const parsedSettings = JSON.parse(savedSettings);
+// console.log(parsedSettings); // Settings object
+
+const y = [{ a: 1 }, { a: 2 }, { a: 4 }];
+const d = ['a', 'b', 'c'];
+const proA = 1;
+const index = y.findIndex(({ a }) => a === 1);
+console.log(index);
+console.log(d.indexOf('c'));
+console.log(y);
